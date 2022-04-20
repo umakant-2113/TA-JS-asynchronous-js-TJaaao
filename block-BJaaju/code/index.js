@@ -3,10 +3,10 @@ let figure = document.querySelector('figure');
 
 function handle(event) {
 
-  event.preventDefault()
+  
    
-  if (event.keyCode === 16) {
-    
+  if (event.keyCode === 13) {
+    event.preventDefault()
     let user = new XMLHttpRequest();
     user.open(
       'GET',

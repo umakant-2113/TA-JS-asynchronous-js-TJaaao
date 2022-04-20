@@ -58,13 +58,14 @@ h1{
 body{
     background-color: burlywood;
 }
-form{
+.form-div{
     text-align: center;
     margin: .9rem 0;
     input{
         font-size: 1.7rem;
         width: 40%;
         padding: .6rem;
+        outline-color: blue;
     }
 }
 .box{
