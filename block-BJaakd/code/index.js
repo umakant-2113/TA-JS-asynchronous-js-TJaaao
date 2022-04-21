@@ -43,19 +43,19 @@ let resolvePromise= new Promise((resolve,reject)=>{
     console.log(result);
     return result;
 }).then((result) => {
-    console.log(result+10);
+    console.log(result);
     return result+10;
 }).then((result) => {
     console.log(result+100);
     return result+100;
 }).then((value)=>{
+
     if(value>100){
-        return "value is greater than 100"
+throw new Error("value is greater than 100") 
     }
-})
-resolvePromise.catch((value)=>{
-console.log(value)
-})
+}).catch(
+console.log
+)
 
 
 let objPromise=new Promise((resolve,reject)=>{
@@ -81,19 +81,15 @@ let first= new Promise((resolve,reject)=>{
 });
 first.then((value)=>{
     console.log(value)
-    return value+1
+    return 2;
     
 }).then((value)=>{
     console.log(value)
-    return value+1
+    return 3
     
 }).then((value)=>{
     console.log(value)
-    return value+1
-    
-}).then((value)=>{
-    console.log(value)
-    return value+1
+    return 4;
     
 })
 
@@ -104,30 +100,26 @@ let bFirst=new Promise((resolve,reject)=>{
 });
 bFirst.then((value)=>{
 console.log(value)
-return value+1;
+return 2;
 })
 bFirst.then((value)=>{
     console.log(value)
-    return value+1;
+    return 3;
 })
 bFirst.then((value)=>{
     console.log(value);
-    return value+1
+    return 4
 });
 
 
 
-let lastPromise=new Promise((resolve,reject)=>{
-    resolve("John")
+let user=new Promise((resolve,reject)=>{
+    resolve("john");
 }).then((value)=>{
-    console.log(value)
-    return value+"Arya"
-}).then((value)=>{
-   console.log(value)
-    setTimeout(()=>{
-   console.log(value+"Bran")
-    },2000)
-}).then((value)=>{
-    console.log(value)
-    return value
-})
+    return Promise.resolve("Arya")
+}).then((v)=>{
+    console.log(v)
+    return new Promise((res)=>{
+        setTimeout(()=> res("Bran"),2000)
+    })
+}).then(console.log)
