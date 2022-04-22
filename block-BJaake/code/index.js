@@ -27,7 +27,6 @@ function displayUI(newsInfo){
             })
 }
 
-
 function displayOptions(sources){
 sources.forEach((source)=>{
   let options = document.createElement('option')
