@@ -19,6 +19,7 @@ const two = new Promise((resolve, reject) =>
 const three = new Promise((resolve, reject) =>
   setTimeout(() => resolve('John'), 3000)
 );
+data=Promise.allSettled([one,two,three]).then(console.log)
 ```
 
 - What will be the output of the following code snippet? How much time will it take for the promise to resolve?
