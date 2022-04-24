@@ -35,14 +35,16 @@ value.forEach((element,i) => {
       fetch(elm).then(function(res){
           return res.json()
       }).then(function(value){
+        console.log(value)
         let h2=document.createElement("h2")
-        h2.innerText=" Characters List"
+        h2.innerText=value.aliases[0]
           let li=document.createElement("li");
           li.classList.add("list2")
           let span=document.createElement("span");
           span.innerText="Close"
           li.innerText=value.name;
-          section.append(li)
+
+          section.append(li ,h2)
           btn.addEventListener("click",()=>{  
         })
       }))
